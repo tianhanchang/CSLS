@@ -1,3 +1,24 @@
+to color :word
+ifelse (last :word) = "h [output "red] [ifelse (last :word) = "d [output "red] [output "black]]
+end
+
+to converse
+local "name
+print [Hi, what's your name?]
+make "name readlist
+ifelse (count :name) = 2 ~
+  [print sentence [Pleased to meet you, ] word (first :name) ".] ~
+  [ifelse (memberp "Ms. :name) ~
+   [print sentence [Pleased to meet you, ] word (first butfirst butfirst :name) ".] ~
+   [ifelse (memberp "Mr. :name) ~
+     [print sentence [Pleased to meet you, ] word (butlast first butfirst butfirst :name) ".] ~
+     [ifelse (memberp ", :name) ~
+       [print sentence [Pleased to meet you, ] word (sentence "Dr. (butlast first butfirst :name)) ".] ~
+       [ifelse (memberp "Queen :name) ~
+         [print sentence [Pleased to meet you, ] "Queen.] ~
+         [print sentence [Pleased to meet you, ] word (butlast first butfirst :name) ".]]]]]
+end
+
 to integerp :number
 if memberp ". :number [output "false]
 output numberp :number
@@ -7,6 +28,9 @@ to past.tensep :word
 if :word = "went [output "ture]
 if :word = "saw [output "ture]
 output "ed = word (last butlast :word) last :word
+
+
+
 
 
 
