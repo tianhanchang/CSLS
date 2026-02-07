@@ -1,0 +1,15 @@
+to integerp :number
+if memberp ". :number [output "false]
+output numberp :number
+end
+
+to past.tensep :word
+if :word = "went [output "ture]
+if :word = "saw [output "ture]
+output "ed = word (last butlast :word) last :word
+
+
+
+
+
+
