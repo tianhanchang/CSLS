@@ -8,3 +8,17 @@ to exaggerate :sentence
 output map "exagger :sentence
 end
 
+to say :word :number
+for [row 1 7] [repeat :number [foreach :word [sayrow :row ? :number] print[]]]
+end
+
+to sayrow :row :letter :number
+foreach item :row thing :letter [repeat :number [type ?]]
+type "| |
+end
+
+Make "a [|  *  | | * * | |*   *| |*****| |*   *| |*   *| |*   *|]
+Make "b [|*****| |*   *| |*   *| |**** | |*   *| |*   *| |*****|]
+Make "i [|*****| |  *  | |  *  | |  *  | |  *  | |  *  | |*****|]
+Make "n [|*   *| |**  *| |**  *| |* * *| |*  **| |*  **| |*   *|]
+Make "r [|*****| |*   *| |*   *| |*****| |* *  | |*  * | |*   *|]
