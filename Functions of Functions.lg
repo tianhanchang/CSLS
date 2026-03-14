@@ -1,0 +1,10 @@
+to exagger :word
+if numberp :word [output :word*2]
+if equalp :word "good [output "great]
+ifelse equalp :word "bad [output "terrible] [output :word]
+end
+
+to exaggerate :sentence
+output map "exagger :sentence
+end
+
